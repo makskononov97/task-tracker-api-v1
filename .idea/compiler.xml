@@ -11,6 +11,6 @@
         <module name="task-tracker-api.test" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="18" />
+    <bytecodeTargetLevel target="11" />
   </component>
 </project>
