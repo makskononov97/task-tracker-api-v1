@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="task-tracker-api.test/Hibernate">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.41">
+    <root id="1">
+      <ServerVersion>9.6.23</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="FarmersAndRegions"/>
+    <database id="3" parent="1" name="bannersandcategories"/>
+    <database id="4" parent="1" name="lportal"/>
+    <database id="5" parent="1" name="new_db"/>
+    <database id="6" parent="1" name="postgres"/>
+    <database id="7" parent="1" name="task-tracker">
+      <Current>1</Current>
+    </database>
+    <database id="8" parent="1" name="template0"/>
+    <database id="9" parent="1" name="template1"/>
+    <schema id="10" parent="7" name="information_schema"/>
+    <schema id="11" parent="7" name="pg_catalog"/>
+    <schema id="12" parent="7" name="public">
+      <Current>1</Current>
+    </schema>
+  </database-model>
+</dataSource>
