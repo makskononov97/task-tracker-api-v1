@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72b62b81-2a4e-49a5-8385-c7c20fa44871" name="Changes" comment="26.03.2024" />
+    <list default="true" id="72b62b81-2a4e-49a5-8385-c7c20fa44871" name="Changes" comment="26.03.2024">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/makskononov97/api/controllers/ProjectController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/makskononov97/api/exceptions/BadRequestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/makskononov97/api/exceptions/CustomErrorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/makskononov97/api/exceptions/CustomExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/makskononov97/api/exceptions/ErrorDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,7 +38,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2dEJLLiY7p7NKr44aAWynOJtfIS" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -74,7 +83,8 @@
       <workItem from="1710317916691" duration="7176000" />
       <workItem from="1710947213133" duration="5434000" />
       <workItem from="1711462166413" duration="2155000" />
-      <workItem from="1711465122278" duration="732000" />
+      <workItem from="1711465122278" duration="1120000" />
+      <workItem from="1711469618627" duration="3294000" />
     </task>
     <task id="LOCAL-00001" summary="05.03.2024">
       <created>1709577315507</created>
@@ -111,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1711465784232</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="26.03.2024">
+      <created>1711465969080</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711465969080</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
