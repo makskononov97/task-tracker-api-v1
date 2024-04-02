@@ -1,0 +1,70 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-task-state-and-task-tables
+      author: liquibase-user
+      changes:
+        - createTable:
+            tableName: task_state
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(400)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: ordinal
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: createdAt
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: project_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: project_id
+                    referencedTableName: project
+                    referencedColumnNames: id
+        - createTable:
+            tableName: task
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(400)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: ordinal
+                  type: bigint
+              - column:
+                  name: createdAt
+                  type: timestamp
+              - column:
+                  name: description
+                  type: varchar(4000)
+              - column:
+                  name: task_state_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: task_state_id
+                    referencedTableName: task_state
+                    referencedColumnNames: id

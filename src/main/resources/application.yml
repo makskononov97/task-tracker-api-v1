@@ -3,12 +3,16 @@ server:
   port: 8080
 
 spring:
+  liquibase:
+    enabled: true
   datasource:
-    url: jdbc:postgresql://localhost/task-tracker
+    url: jdbc:postgresql://localhost:5432/task-tracker
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
   jpa:
-    hibernate:
-      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: none
     show-sql: true

@@ -15,6 +15,7 @@ public class TaskDto {
 
     Long id;
 
+    @NonNull
     String name;
 
     @JsonProperty("created_at")

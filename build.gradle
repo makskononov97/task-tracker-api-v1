@@ -19,7 +19,8 @@ dependencies {
 
 //DB
 dependencies {
-    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.19'}
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.7.0'
+    }
 
 /**
  * Lombok
@@ -30,6 +31,15 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.20'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
 }
+
+//Liquibase
+dependencies {
+    implementation 'org.liquibase:liquibase-core:4.25.1'
+
+    runtimeOnly "org.postgresql:postgresql"
+}
+//
+
 
 /**
  * Tests
