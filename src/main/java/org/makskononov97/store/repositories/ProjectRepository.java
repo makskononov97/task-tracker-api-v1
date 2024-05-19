@@ -2,9 +2,11 @@ package org.makskononov97.store.repositories;
 
 import org.makskononov97.store.entities.ProjectEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 import java.util.stream.Stream;
+
 
 public interface ProjectRepository extends JpaRepository<ProjectEntity, Long> {
 

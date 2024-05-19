@@ -18,6 +18,8 @@ public class TaskDto {
     @NonNull
     String name;
 
+    Long ordinal;
+
     @JsonProperty("created_at")
     Instant createdAt;
 
