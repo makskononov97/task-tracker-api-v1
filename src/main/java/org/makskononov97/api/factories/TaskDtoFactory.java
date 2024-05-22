@@ -5,7 +5,7 @@ import org.makskononov97.store.entities.TaskEntity;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TaskFactory {
+public class TaskDtoFactory {
 
     public TaskDto makeTaskDto(TaskEntity entity){
 

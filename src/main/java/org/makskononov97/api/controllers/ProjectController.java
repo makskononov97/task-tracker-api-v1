@@ -3,6 +3,7 @@ package org.makskononov97.api.controllers;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.makskononov97.api.controllers.helpers.ControllerHelper;
 import org.makskononov97.api.dto.AskDto;
 import org.makskononov97.api.dto.ProjectDto;
 import org.makskononov97.api.exceptions.BadRequestException;
@@ -28,6 +29,8 @@ public class ProjectController {
     ProjectRepository projectRepository;
 
     ProjectDtoFactory projectDtoFactory;
+
+    ControllerHelper controllerHelper;
 
     public static final String FETCH_PROJECTS = "/api/projects";
 //    public static final String CREATE_PROJECT = "/api/projects";
@@ -82,7 +85,7 @@ public class ProjectController {
         boolean isCreate = !optionalProjectId.isPresent();
 
         final ProjectEntity project = optionalProjectId
-                .map(this::getProjectOrThrowException)
+                .map(controllerHelper::getProjectOrThrowException)
                 .orElseGet(() -> ProjectEntity.builder().build());
 
         if (isCreate && !optionalProjectName.isPresent()) {
@@ -138,25 +141,11 @@ public class ProjectController {
     @DeleteMapping(DELETE_PROJECT)
     public AskDto deleteProject(@PathVariable("project_id") Long projectId) {
 
-        ProjectEntity project = getProjectOrThrowException(projectId);
+        controllerHelper.getProjectOrThrowException(projectId);
 
         projectRepository.deleteById(projectId);
 
         return AskDto.makeDefault(true);
     }
-
-    private ProjectEntity getProjectOrThrowException(Long projectId) {
-        return projectRepository
-                .findById(projectId)
-                .orElseThrow(() ->
-                        new NotFoundException(
-                                String.format(
-                                        "Project with \"%s\" doesn't exists.",
-                                        projectId
-                                )
-                        )
-                );
-    }
-
 
 }
