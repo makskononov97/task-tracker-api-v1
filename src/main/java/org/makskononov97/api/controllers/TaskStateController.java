@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -68,11 +69,25 @@ public class TaskStateController {
 
                 });
 
+//        Optional<TaskStateEntity> optionalAnotherTaskState = taskStateRepository
+//                .findTaskStateEntityByRightTaskStateIdIsNullAndProjectId(projectId);
+
         TaskStateEntity taskState = taskStateRepository.saveAndFlush(
                 TaskStateEntity.builder()
                         .name(taskStateName)
+//                        .project(project)
                         .build()
         );
+
+//        optionalAnotherTaskState
+//                .ifPresent(anotherTaskState -> {
+//
+//                    taskState.setLeftTaskState(anotherTaskState);
+//
+//                    anotherTaskState.setRightTaskState(taskState);
+//
+//                    taskStateRepository.saveAndFlush(anotherTaskState);
+//                });
 
         taskStateRepository
                 .findTaskStateEntityByRightTaskStateIdIsNullAndProjectId(projectId)

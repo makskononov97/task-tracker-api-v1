@@ -20,7 +20,7 @@ public class ControllerHelper {
 
     public ProjectEntity getProjectOrThrowException(Long projectId) {
 
-        return ProjectRepository
+        return projectRepository
                 .findById(projectId)
                 .orElseThrow(() ->
                         new NotFoundException(

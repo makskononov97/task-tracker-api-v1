@@ -5,23 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72b62b81-2a4e-49a5-8385-c7c20fa44871" name="Changes" comment="22.05.2024 19:00&#10;+ ControllerHelper&#10;+ TaskStateController">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/makskononov97/api/controllers/TaskStateController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/makskononov97/api/controllers/helpers/ControllerHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ee2fc35-bc06-4ddc-b48a-fb5723e34953.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6ee2fc35-bc06-4ddc-b48a-fb5723e34953.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/70efd6de-2305-4d8d-9a49-6590294ee658.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/70efd6de-2305-4d8d-9a49-6590294ee658.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/70efd6de-2305-4d8d-9a49-6590294ee658/storage_v2/_src_/database/task-tracker.8Jq0nw/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/70efd6de-2305-4d8d-9a49-6590294ee658/storage_v2/_src_/database/task-tracker.8Jq0nw/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/70efd6de-2305-4d8d-9a49-6590294ee658/storage_v2/_src_/database/task-tracker.8Jq0nw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/70efd6de-2305-4d8d-9a49-6590294ee658/storage_v2/_src_/database/task-tracker.8Jq0nw/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/70efd6de-2305-4d8d-9a49-6590294ee658/storage_v2/_src_/database/task-tracker.8Jq0nw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/70efd6de-2305-4d8d-9a49-6590294ee658/storage_v2/_src_/database/task-tracker.8Jq0nw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/makskononov97/api/controllers/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/makskononov97/api/controllers/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/makskononov97/api/dto/TaskStateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/makskononov97/api/dto/TaskStateDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/makskononov97/api/factories/TaskFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/makskononov97/api/factories/TaskDtoFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/makskononov97/api/factories/TaskStateFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/makskononov97/api/factories/TaskStateDtoFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/makskononov97/store/entities/TaskEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/makskononov97/store/entities/TaskEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/makskononov97/store/entities/TaskStateEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/makskononov97/store/entities/TaskStateEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/makskononov97/store/repositories/TaskStateRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/makskononov97/store/repositories/TaskStateRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/makskononov97/api/controllers/TaskStateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/makskononov97/api/controllers/TaskStateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/makskononov97/api/controllers/helpers/ControllerHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/makskononov97/api/controllers/helpers/ControllerHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,9 +132,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2dEJLLiY7p7NKr44aAWynOJtfIS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -163,8 +152,9 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.Application.executor": "Run",
+    "Spring Boot.Application.executor": "Debug",
     "WebServerToolWindowFactoryState": "false",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Макс/IdeaProjects/task-tracker-api",
     "node.js.detected.package.eslint": "true",
@@ -354,7 +344,8 @@
       <workItem from="1716103361169" duration="5866000" />
       <workItem from="1716116072344" duration="1403000" />
       <workItem from="1716142648341" duration="362000" />
-      <workItem from="1716354006333" duration="12872000" />
+      <workItem from="1716354006333" duration="12966000" />
+      <workItem from="1716808809288" duration="2852000" />
     </task>
     <task id="LOCAL-00001" summary="05.03.2024">
       <created>1709577315507</created>
@@ -419,7 +410,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712080460389</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="22.05.2024 19:00&#10;+ ControllerHelper&#10;+ TaskStateController">
+      <option name="closed" value="true" />
+      <created>1716378930422</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716378930422</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
