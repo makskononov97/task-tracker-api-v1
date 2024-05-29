@@ -5,7 +5,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.makskononov97.api.exceptions.NotFoundException;
 import org.makskononov97.store.entities.ProjectEntity;
+import org.makskononov97.store.entities.TaskStateEntity;
 import org.makskononov97.store.repositories.ProjectRepository;
+import org.makskononov97.store.repositories.TaskStateRepository;
 import org.springframework.stereotype.Component;
 
 import javax.transaction.Transactional;
@@ -31,4 +33,5 @@ public class ControllerHelper {
                         )
                 );
     }
+
 }
