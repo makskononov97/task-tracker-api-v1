@@ -10,8 +10,8 @@ import java.util.stream.DoubleStream;
 
 public interface TaskStateRepository extends JpaRepository<TaskStateEntity, Long> {
 
-    Optional<TaskStateEntity> findTaskStateEntityByRightTaskStateIdIsNullAndProjectId
-            (Long projectId);
+//    Optional<TaskStateEntity> findTaskStateEntityByRightTaskStateIdIsNullAndProjectId
+//            (Long projectId);
 
     Optional<TaskStateEntity> findTaskStateEntityByProjectIdAndNameContainsIgnoreCase
             (Long taskStateid, String taskStateName);

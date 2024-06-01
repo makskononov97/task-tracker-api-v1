@@ -4,6 +4,7 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.makskononov97.api.controllers.helpers.ControllerHelper;
+import org.makskononov97.api.dto.AskDto;
 import org.makskononov97.api.dto.TaskStateDto;
 import org.makskononov97.api.exceptions.BadRequestException;
 import org.makskononov97.api.exceptions.NotFoundException;
@@ -34,7 +35,7 @@ public class TaskStateController {
     public static final String CREATE_TASK_STATE = "/api/projects/{project_id}/task-states";
     public static final String UPDATE_TASK_STATE = "/api/task-states/{task_state_id}";
     public static final String CHANGE_TASK_STATE_POSITION = "/api/task-states/{task_state_id}/position/change";
-
+    public static final String DELETE_TASK_STATE = "/api/task-states/{task_state_id}";
 
     @GetMapping(GET_TASK_STATES)
     public List<TaskStateDto> getTaskStates(@PathVariable(name = "project_id") Long projectId) {
@@ -63,7 +64,7 @@ public class TaskStateController {
                 .getTaskStates()
                 .stream()
                 .map(TaskStateEntity::getName)
-                .filter(anothertaskStateName -> anothertaskStateName.equalsIgnoreCase(taskStateName))
+                .filter(anotherTaskStateName -> anotherTaskStateName.equalsIgnoreCase(taskStateName))
                 .findAny()
                 .ifPresent(it -> {
 
@@ -71,13 +72,24 @@ public class TaskStateController {
 
                 });
 
-//        Optional<TaskStateEntity> optionalAnotherTaskState = taskStateRepository
-//                .findTaskStateEntityByRightTaskStateIdIsNullAndProjectId(projectId);
+        Optional<TaskStateEntity> optionalAnotherTaskState = Optional.empty();
+
+        for (TaskStateEntity taskState: project.getTaskStates()) {
+
+            if (taskState.getName().equalsIgnoreCase(taskStateName)) {
+                throw new BadRequestException(String.format("Task state \"s\" already exists.", taskStateName));
+            }
+
+            if (!taskState.getRightTaskState().isPresent()) {
+                optionalAnotherTaskState = Optional.of(taskState);
+                break;
+            }
+        }
 
         TaskStateEntity taskState = taskStateRepository.saveAndFlush(
                 TaskStateEntity.builder()
                         .name(taskStateName)
-//                        .project(project)
+                        .project(project)
                         .build()
         );
 
@@ -91,8 +103,7 @@ public class TaskStateController {
 //                    taskStateRepository.saveAndFlush(anotherTaskState);
 //                });
 
-        taskStateRepository
-                .findTaskStateEntityByRightTaskStateIdIsNullAndProjectId(projectId)
+        optionalAnotherTaskState
                 .ifPresent(anotherTaskState -> {
 
                     taskState.setLeftTaskState(anotherTaskState);
@@ -136,7 +147,6 @@ public class TaskStateController {
 
     }
 
-    //TODO: разобраться что тут
     @PatchMapping(CHANGE_TASK_STATE_POSITION)
     public TaskStateDto changeTaskStatePosition(
             @PathVariable(name = "task_state_id") Long taskStateId,
@@ -220,7 +230,18 @@ public class TaskStateController {
         return taskStateDtoFactory.makeTaskStateDto(changeTaskState);
     }
 
-    //TODO: и разобраться что тут
+    @DeleteMapping(DELETE_TASK_STATE)
+    public AskDto deleteTaskState(@PathVariable(name = "task_state_id") Long taskStateId) {
+
+        TaskStateEntity changeTaskState = getTaskStateOrThrowException(taskStateId);
+
+        replaceOldTaskStatePosition(changeTaskState);
+
+        taskStateRepository.delete(changeTaskState);
+
+        return AskDto.builder().answer(true).build();
+    }
+
     private void replaceOldTaskStatePosition(TaskStateEntity changeTaskState) {
 
         Optional<TaskStateEntity> optionalOldLeftTaskState = changeTaskState.getLeftTaskState();
